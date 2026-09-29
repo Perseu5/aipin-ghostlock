@@ -15,6 +15,16 @@ anything. A mismatch stops the run.
 > Use it only on a Pin you own and can afford to recover. Root disappears on
 > reboot.
 
+## Fork improvements
+
+This fork hardens and stabilizes the production exploit path for the Humane
+45.20 retail profile. It adds slot `_a` support alongside `_b`, repairs
+`init_cred` immediately after each collateral credential-pointer write, and
+allows the SELinux follow-up only after that repair succeeds. It also binds
+the selected profile to the native payload, makes the one-attempt-per-boot
+claim atomic, rechecks power immediately before launch, and tightens private
+log handling.
+
 ## Tested target
 
 | Property | Accepted value |
